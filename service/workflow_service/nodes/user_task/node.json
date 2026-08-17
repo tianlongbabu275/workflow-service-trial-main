@@ -1,0 +1,89 @@
+{
+  "codex": {
+    "categories": [
+      "Development"
+    ],
+    "resources": {
+      "primaryDocumentation": [
+        {
+          "url": ""
+        }
+      ]
+    }
+  },
+  "defaults": {
+    "name": "User Task"
+  },
+  "description": "Send message and wait for response",
+  "displayName": "User Task",
+  "group": [
+    "output"
+  ],
+  "iconUrl": "/icons/embed/n8n-nodes-base.userTask/userTask.svg",
+  "inputs": [
+    "main"
+  ],
+  "name": "n8n-nodes-base.userTask",
+  "outputs": [
+    "main"
+  ],
+  "properties": [
+    {
+      "displayName": "Message",
+      "name": "message",
+      "type": "string",
+      "typeOptions": {
+        "rows": 5
+      }
+    },
+    {
+      "displayName": "Response Type",
+      "name": "responseType",
+      "default": "approval",
+      "noDataExpression": true,
+      "options": [
+        {
+          "name": "Approval",
+          "value": "Approval"
+        }
+      ],
+      "type": "options"
+    },
+    {
+      "default": 7,
+      "description": "The number of days to wait for the response, the task will be closed after that",
+      "displayName": "Due In Days",
+      "name": "dueInDays",
+      "required": true,
+      "type": "number",
+      "typeOptions": {
+        "minValue": 1,
+        "maxValue": 100
+      }
+    },
+    {
+      "displayName": "Notification Channels",
+      "name": "notificationChannels",
+      "description": "Task message will be sent via these notification channels",
+      "type": "multiOptions",
+      "options": [
+        {
+            "name": "HTTP",
+            "value": "HTTP"
+        }
+      ]
+    },
+    {
+      "displayName": "HTTP notification endpoint",
+      "name": "httpNotificationEndpoint",
+      "type": "string",
+      "displayOptions": {
+        "show": {
+          "notificationChannels": ["HTTP"]
+        }
+      }
+    }
+  ],
+  "subtitle": "User Task",
+  "version": 1
+}

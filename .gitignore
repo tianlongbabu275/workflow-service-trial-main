@@ -1,0 +1,37 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+.DS_Store
+*.png
+
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Dependency directories (remove the comment below to include it)
+.idea/
+vendor/
+bin/
+
+# VS Code
+.vscode/
+
+*test.log
+*.db
+
+scripts/prune-orphan-secrets/tmp/
+cmd/cosellctl/cmd/archive/
+cmd/cosellctl/cmd/play.go
+
+*.log
+
+.air.toml
+/tmp
+**/*__debug_bin*
+**/*.preview.html

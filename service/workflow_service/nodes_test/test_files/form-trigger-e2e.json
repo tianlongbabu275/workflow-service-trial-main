@@ -1,0 +1,83 @@
+{
+  "name": "Form Trigger",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "e5427436-0460-4fb7-baa3-f8ee2a2b7d92",
+        "formTitle": "Contact Us Now Customize",
+        "formDescription": "We'll get back to you soon",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Name",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Email",
+              "fieldType": "email",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Address",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Hobby",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  { "option": "basketball" },
+                  { "option": "soccer" }
+                ]
+              },
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3c19b4a9-acdd-488b-90e3-ea8b4e1534b3",
+      "name": "n8n Form Trigger",
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.1,
+      "position": [340, 400],
+      "webhookId": "e5427436-0460-4fb7-baa3-f8ee2a2b7d92",
+      "sugerOrgId": "w43Vc6UfM"
+    },
+    {
+      "parameters": {
+        "jsCode": "for (const item of $input.all()) {\n  item.json.myNewField = 1;\n}\n\nreturn $input.all();"
+      },
+      "id": "c1426325-fe87-4211-8a8c-92d8e3b032f4",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [560, 400],
+      "sugerOrgId": "w43Vc6UfM"
+    }
+  ],
+  "connections": {
+    "n8n Form Trigger": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [[]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "sugerOrgId": "w43Vc6UfM"
+  },
+  "tags": [],
+  "versionId": "",
+  "sugerOrgId": "w43Vc6UfM"
+}
